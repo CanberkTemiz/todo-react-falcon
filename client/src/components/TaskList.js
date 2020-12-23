@@ -4,7 +4,7 @@ import { fetchTasks } from "../actions";
 
 class TaskList extends React.Component {
   componentDidMount() {
-    console.log(this.props);
+    console.log(this.props.fetchTasks());
   }
   render() {
     return <div>TaskList</div>;

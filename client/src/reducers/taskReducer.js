@@ -1,7 +1,7 @@
 export default (state = [], action) => {
   switch (action.type) {
     case "FETCH_TASKS":
-      return "FETCH_TASKS";
+      return action.payload;
     case "ADD_TASKS":
       return "ADD_TASKS";
     case "REMOVE_TASKS":
