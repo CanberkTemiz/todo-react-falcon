@@ -11,7 +11,7 @@ These instructions will get you a copy of the project up and running on your loc
 What things you need to install the software and how to install them
 
 ```
-https://github.com/CanberkTemiz/todo-react-falcon.git
+git clone https://github.com/CanberkTemiz/todo-react-falcon.git
 ```
 
 ### Installing
