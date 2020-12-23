@@ -4,11 +4,27 @@ import { fetchTasks } from "../actions";
 
 class TaskList extends React.Component {
   componentDidMount() {
-    console.log(this.props.fetchTasks());
+    this.props.fetchTasks();
   }
+
+  renderedList() {
+    return this.props.tasks.map((task) => {
+      return (
+        <div className="item" key={task.id}>
+          <h3>{task.title}</h3>
+          <p>{task.description}</p>
+        </div>
+      );
+    });
+  }
+
   render() {
-    return <div>TaskList</div>;
+    return <div>{this.renderedList()}</div>;
   }
 }
 
-export default connect(null, { fetchTasks })(TaskList);
+const mapStateToProps = (state) => {
+  return { tasks: state.tasks };
+};
+
+export default connect(mapStateToProps, { fetchTasks })(TaskList);
