@@ -1,29 +1,16 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
-import { deleteTask, editTask } from "../actions";
-import TaskAdd from "./TaskAdd";
+import { deleteTask, setEditingTask } from "../actions";
 
-const TaskItem = ({ task, deleteTask }) => {
-  const [enableEdit, setEnableEdit] = useState(false);
-
-  const handleDelete = () => {
-    deleteTask(task.id);
-  };
-
+const TaskItem = ({ task, deleteTask, setEditingTask }) => {
   return (
     <div>
-      {!enableEdit ? (
-        <>
-          <h1>{task.title}</h1>
-          <h3>{task.description}</h3>
-        </>
-      ) : (
-        <TaskAdd editTaskId={task.id} />
-      )}
-      <button onClick={handleDelete}>Delete</button>
-      <button onClick={() => setEnableEdit(true)}>Edit</button>
+      <h1>{task.title}</h1>
+      <h3>{task.description}</h3>
+      <button onClick={() => deleteTask(task.id)}>Delete</button>
+      <button onClick={() => setEditingTask(task)}>Edit</button>
     </div>
   );
 };
 
-export default connect(null, { deleteTask, editTask })(TaskItem);
+export default connect(null, { deleteTask, setEditingTask })(TaskItem);

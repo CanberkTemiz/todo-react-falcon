@@ -24,7 +24,7 @@ class TaskList extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-  return { tasks: state.tasks };
+  return { tasks: state.taskReducer.tasks };
 };
 
 export default connect(mapStateToProps, { fetchTasks })(TaskList);
