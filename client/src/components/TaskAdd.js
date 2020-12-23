@@ -1,19 +1,18 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
-import { addTask } from "../actions";
+import { addTask, editTask } from "../actions";
 
 const INITIAL = {
   title: "",
   description: "",
 };
 
-const TaskAdd = ({ addTask }) => {
+const TaskAdd = ({ addTask, editTask, editTaskId = false }) => {
   const [values, setValues] = useState(INITIAL);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    addTask(values);
-    setValues(INITIAL);
+    editTaskId ? editTask(editTaskId, values) : addTask(values);
   };
 
   const updateField = (e) => {
@@ -39,4 +38,4 @@ const TaskAdd = ({ addTask }) => {
   );
 };
 
-export default connect(null, { addTask })(TaskAdd);
+export default connect(null, { addTask, editTask })(TaskAdd);
