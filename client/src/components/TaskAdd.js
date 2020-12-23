@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import { addTask, editTask } from "../actions";
-// import { getTaskById } from "../reducers/taskReducer";
+import { Button, Form, FormGroup } from "semantic-ui-react";
 
 const INITIAL = {
   title: "",
@@ -32,21 +32,27 @@ const TaskAdd = ({ addTask, editTask, editingTask }) => {
   }, [editingTask]);
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input
-        value={values.title}
-        name="title"
-        onChange={updateField}
-        placeholder="title"
-      />
-      <input
-        value={values.description}
-        name="description"
-        onChange={updateField}
-        placeholder="description"
-      />
-      <button type="submit">{editingTask ? "save changes" : "add"}</button>
-    </form>
+    <Form onSubmit={handleSubmit}>
+      <Form.Group widths="equal">
+        <Form.Input
+          fluid
+          value={values.title}
+          name="title"
+          onChange={updateField}
+          placeholder="title"
+          required
+        />
+
+        <Form.Input
+          fluid
+          value={values.description}
+          name="description"
+          onChange={updateField}
+          placeholder="description"
+        />
+        <Form.Button>{editingTask ? "save changes" : "add"}</Form.Button>
+      </Form.Group>
+    </Form>
   );
 };
 

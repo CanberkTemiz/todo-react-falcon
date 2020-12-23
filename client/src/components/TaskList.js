@@ -11,7 +11,7 @@ class TaskList extends React.Component {
   renderedList() {
     return this.props.tasks.map((task) => {
       return (
-        <div className="item" key={task.id}>
+        <div className="ui segment" key={task.id}>
           <TaskItem task={task} />
         </div>
       );

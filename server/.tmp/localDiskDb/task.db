@@ -187,3 +187,9 @@
 {"$$deleted":true,"_id":63}
 {"title":"t111","description":"d111","createdAt":1608743781852,"updatedAt":1608743781852,"id":63,"priority":0,"project":null,"_id":63}
 {"title":"t2","description":"d2","createdAt":1608744431526,"updatedAt":1608744431526,"id":65,"priority":0,"project":null,"_id":65}
+{"$$deleted":true,"_id":63}
+{"title":"t2","description":"d2","createdAt":1608750036834,"updatedAt":1608750036834,"id":66,"priority":0,"project":null,"_id":66}
+{"$$deleted":true,"_id":66}
+{"title":"t222","description":"d2","createdAt":1608750036834,"updatedAt":1608750036834,"id":66,"priority":0,"project":null,"_id":66}
+{"title":"import React, { useState } from \"react\"; import { connect } from \"react-redux\"; import { Button, Form, List } from \"semantic-ui-react\"; import { deleteTask, setEditingTask } from \"../actions\";  const TaskItem = ({ task, deleteTask, setEditingTask }) => {   return (     <List divided verticalAlign=\"middle\">       <List.Item>         <Form.Checkbox />         <List.Content floated=\"right\">           <Button onClick={() => deleteTask(task.id)}>Delete</Button>           <Button onClick={() => setEditingTask(task)}>Edit</Button>         </List.Content>         <List.Content>           <h3>{task.title}</h3>           <p>{task.description}</p>         </List.Content>       </List.Item>     </List>   ); };  export default connect(null, { deleteTask, setEditingTask })(TaskItem);","description":"qwef","createdAt":1608750711255,"updatedAt":1608750711255,"id":67,"priority":0,"project":null,"_id":67}
+{"$$deleted":true,"_id":67}

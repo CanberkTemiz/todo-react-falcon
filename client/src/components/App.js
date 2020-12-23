@@ -4,7 +4,7 @@ import TaskAdd from "./TaskAdd";
 
 const App = () => {
   return (
-    <div className="App">
+    <div className="ui segment center">
       <TaskAdd />
       <TaskList />
     </div>
